@@ -1,5 +1,4 @@
 /* Base Styles */
-
 :root {
     font-size: 10px;
 }
@@ -20,4 +19,180 @@ body {
 
 img {
     display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Profile Styles */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-image {
+    flex: 1;
+}
+
+.profile-image img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid darkgreen;
+}
+
+.profile-user-settings {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+
+.profile-user-name {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-right: 2rem;
+}
+
+.btn {
+    background-color: #0095f6;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.profile-stats {
+    flex: 3;
+    display: flex;
+}
+
+.profile-stats ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.profile-stats li {
+    font-size: 1.6rem;
+    margin-right: 2rem;
+}
+
+.profile-stat-count {
+    font-weight: 600;
+}
+
+.profile-bio {
+    flex: 4;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+}
+
+.profile-real-name {
+    font-weight: 600;
+}
+
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-item:hover .gallery-item-info {
+    opacity: 1;
+}
+
+.gallery-item-info ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.gallery-item-info li {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    font-size: 1.6rem;
+}
+
+.gallery-item-info i {
+    margin-right: 0.5rem;
+}
+
+/* Loader Styles */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #0095f6;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 4rem auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-user-settings {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-stats {
+        margin-top: 1rem;
+    }
+
+    .profile-bio {
+        margin-top: 1rem;
+    }
 }
